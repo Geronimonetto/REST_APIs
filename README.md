@@ -62,3 +62,43 @@ ou 
     - ***cities*** → Parâmetro chamado cidades
 - Estruturando REST API
     - reservahotel.com/hoteis?***cities=Rio-de-Janeiro***
+
+## URI baseado em recursos
+
+- API de redes sociais
+    - Criar ou postar mensagens
+    - Comentar em mensagens
+    - Curtir mensagens
+    - Compartilhar mensagens
+    - CRUD de usuários
+    - CRUD - Create, Read, Update, Delete
+    - CRUD da API
+        - Criar novo usuário
+        - Ler dados de usuários
+        - Alterar dados de usuários
+        - Deletar usuário
+    
+    No caso acima se fizermos uma assimilação a pastas a URI para encontrar 
+    
+    o usuário seria /usuário/nomedousuario
+    
+    URI de postagem:
+    
+    /postagens/ID
+    
+    URI de postagem de determinado usuario:
+    
+    /usuarios/nomeusuario/postagens
+    
+    URI de postagem específica de usuario específico
+    
+    /usuarios/nomeusuario/postagens/id
+    
+    URI de curtida de postagem + comentario + compartilhamento
+    
+    postagens/id/comentario
+    
+    postagens/id/compartilhamento
+    
+    postagens/id/curtida
+
