@@ -102,3 +102,25 @@ ou 
     
     postagens/id/curtida
 
+### Coleção de recursos
+
+- ***URI de recursos únicos*** chamam-se de instâncias
+    - /postagens/ID
+- ***URI contendo vários recursos*** chamam-se de coleções
+    - /postagens
+
+Contundo em coleções podemos usar parâmetros de consultas por conta do tamanho de informações, seria impossível trazer todas as informações das coleções em apenas 1 lista, portanto podemos usar paginação.
+
+paginação - podemos definir quantas informações podemos definir por página quantos elementos serão exibidos.
+
+**limit** ( parâmetro de consulta ) - Não mais que a quantidade determinada será exibida
+
+**Offset** ( quantidade de elementos serão pulados )
+
+Exemplos:
+
+/postagens?limit=10&offset=30 - pula 30 primeiras linhas, recebendo dados da linha 31 até 40
+
+/postagens?**ano**=2018 - query usando ano
+
+/postagens?ano=2018&limit=10&offset=30
