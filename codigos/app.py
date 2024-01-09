@@ -1,24 +1,16 @@
-from typing import Union
-from fastapi import FastAPI
-from pydantic import BaseModel
+from flask import Flask
+from flask_restful import Api
+from resources.hotel import Hoteis, Hotel
+
+app = Flask(__name__)
+api = Api(app)
 
 
-app = FastAPI()
+api.add_resource(Hoteis, '/hoteis')
+api.add_resource(Hotel, '/hoteis/<string:hotel_id>')
 
-class Item(BaseModel):
-    name:str
-    prince:float
-    is_offer: Union[bool] = None
+if __name__ == '__main__':
+    app.run(debug=True)
 
 
-@app.get('/')
-def read_root():
-    return {'hello':'World'}
-
-@app.get('/items/{item_id}')
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {'item_id': item_id, 'q': q}
-
-@app.put('items/{item_id}')
-def update_item(item_id: int, item: Item):
-    return {'item_name': item.name, 'item_id': item_id}
+    
