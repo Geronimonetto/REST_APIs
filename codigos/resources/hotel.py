@@ -35,10 +35,15 @@ class Hoteis(Resource):
         return {'hoteis': hoteis}  # convertido automatico para JSON
 
 class Hotel(Resource):
-    def get(self, hotel_id):
+    def find_hotel(hotel_id):
         for hotel in hoteis:
             if hotel['hotel_id'] == hotel_id:
                 return hotel
+        return None   
+    def get(self, hotel_id):
+        hotel = Hotel.find_hotel(hotel_id)
+        if hotel:
+            return hotel
         return {'message': 'Hotel not found.'}, 404  # not found
     
     def post(self, hotel_id):
@@ -64,7 +69,9 @@ class Hotel(Resource):
     
 
     def put(self, hotel_id):
-        return {'hoteis_id': hoteis}
+        hotel = Hotel.find_hotel(hotel_id)
+        if hotel:
+            hotel.update(novo_hotel)
     
     def delete(self):
         return {'hoteis_id': hoteis}
