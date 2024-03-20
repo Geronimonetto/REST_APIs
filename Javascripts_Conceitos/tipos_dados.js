@@ -27,3 +27,7 @@ let produto = "morais";
 let nomefinal = "Neto"
 
 console.log("Nome: " + nomenovo + " Sobrenome: " + produto + " Nome final: " + nomefinal)
+
+/*
+os tipos de dados são parecidos com os de outras linguagens porém existem algumas coisas que são específicas do JS
+*/
