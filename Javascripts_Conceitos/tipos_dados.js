@@ -24,7 +24,7 @@ console.log(precoComDesconto);
 
 let nomenovo = "Geronimo";
 let produto = "morais";
-let nomefinal = "Neto"
+let nomefinal = "Neto";
 
 console.log("Nome: " + nomenovo + " Sobrenome: " + produto + " Nome final: " + nomefinal)
 
